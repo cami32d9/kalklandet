@@ -188,7 +188,7 @@ footer {
 }
 
 .margin_left {
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 
@@ -230,7 +230,7 @@ footer {
     .margin_left {
         margin-left: 10px;
     }
-    .margin-top {
+    .margin_top {
         margin-top: 10px;
     }
 }
