@@ -1,0 +1,110 @@
+
+/*1. GENERAL*/
+/*2. HEADER*/
+/*3. MAIN*/
+
+/*----- GENERAL -----*/
+
+:root {
+    --main-border: 1px solid black;
+    --header-footer-color: lightsteelblue;
+}
+
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0; /*for at undgå 8px automatisk margin*/
+}
+
+img {
+    width: 100%;
+}
+
+.margin_left {
+    margin-left: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*----- HEADER -----*/
+
+header {
+    background-color: var(--header-footer-color);
+    display: flex;
+}
+
+.header_img,
+nav,
+.search {
+    margin: 10px;
+}
+
+.header_img {
+    flex: 1.5;
+}
+
+nav {
+    flex: 5;
+    height: 100%;
+    padding: 10px;
+    background-color: white;
+}
+
+.search {
+    flex: 1;
+    height: 100%;
+    padding: 10px;
+    background-color: white;
+}
+
+
+/*----- MAIN -----*/
+
+main {
+    margin: 40px;
+    min-height: 650px;
+}
+
+.flex {
+    display: flex;
+}
+
+.border_block {
+    margin: 10px;
+    width: 100%;
+    border: var(--main-border);
+}
+
+.border_block:first-child {
+    margin-left: 0;
+}
+
+
+/*----- FOOTER -----*/
+
+footer {
+    background-color: var(--header-footer-color);
+    display: flex;
+    padding-top: 10px;
+}
+
+.footer_block {
+    margin: 10px;
+    width: 100%;
+    flex: 1;
+}
+
+.flex_two {
+    flex: 2;
+}
+
+h4 {
+    margin: 0 0 10px 0;
+}
