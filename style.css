@@ -3,7 +3,8 @@
 /*2. HEADER*/
 /*3. MAIN*/
 /*4. FOOTER*/
-/*5. MEDIA QUERIES*/
+/*5. HELPERS*/
+/*6. MEDIA QUERIES*/
 
 /*----- GENERAL -----*/
 
@@ -12,6 +13,7 @@
     --header-footer-color: lightsteelblue;
     --mobile-margin: 10px;
     --desktop-margin: 45px;
+    --stevnsfort-main-color: #377288;
 }
 
 html {
@@ -28,10 +30,12 @@ h4 {
 
 body {
     margin: 0; /*for at undgå 8px automatisk margin*/
+    overflow-y: scroll; /*viser scrollbar selvom siden ikke er lang nok, så ting ikke hopper*/
 }
 
 img {
     width: 100%;
+    align-self: center;
 }
 
 ul {
@@ -39,22 +43,6 @@ ul {
     padding: 10px;
     margin: 0;
     height: 100%;
-}
-
-.flex_one {
-    flex: 1;
-}
-
-.flex_two {
-    flex: 2;
-}
-
-.border {
-    border: var(--main-border);
-}
-
-.margin_left {
-    margin-left: 10px;
 }
 
 
@@ -81,6 +69,8 @@ nav {
     height: fit-content;
     padding: 10px;
     background-color: white;
+    display: flex;
+    justify-content: space-around;
 }
 
 .search {
@@ -94,6 +84,10 @@ nav {
     background-image: url("elements/header_placeholder.jpg");
     background-size: cover;
     height: 30vh;
+}
+
+.stevnsfort {
+    background-color: var(--stevnsfort-main-color);
 }
 
 
@@ -110,16 +104,27 @@ main {
     flex-direction: column;
 }
 
-.block {
-    margin: 5px 0;
-}
-
 .text_block {
     padding: 10px;
-    display: none;
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
+.mobile_hide {
+    display: none;
+}
+
+
+/*----- SUB-NAVIGATION -----*/
+
+.sub_navigation {
+    width: 200px;
+    margin-left: 10px;
+    text-align: right;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    padding: 10px;
+    color: white;
+}
 
 /*----- FOOTER -----*/
 
@@ -142,7 +147,7 @@ footer {
 .footer_follow {
     height: inherit;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-self: flex-end;
     flex-direction: row;
 }
 
@@ -158,6 +163,34 @@ footer {
     flex-direction: column;
 
 }
+
+
+/*----- HELPERS -----*/
+
+.flex_one {
+    flex: 1;
+}
+
+.flex_two {
+    flex: 2;
+}
+
+.flex_three {
+    flex: 3;
+}
+
+.flex_four {
+    flex: 4;
+}
+
+.border {
+    border: var(--main-border);
+}
+
+.margin_left {
+    margin-left: 0px;
+}
+
 
 /*----- MEDIA QUERIES -----*/
 
@@ -182,16 +215,22 @@ footer {
     .flex {
         flex-direction: row;
     }
-    .block {
-        margin-left: 10px;
-    }
     .block:first-child {
         margin-left: 0;
     }
-    .text_block {
+    .mobile_hide {
         display: block;
     }
     main {
         margin: 0 var(--desktop-margin) 40px var(--desktop-margin);
+    }
+    .text_block {
+        margin: 0;
+    }
+    .margin_left {
+        margin-left: 10px;
+    }
+    .margin-top {
+        margin-top: 10px;
     }
 }
