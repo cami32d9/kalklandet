@@ -6,14 +6,47 @@
 /*5. HELPERS*/
 /*6. MEDIA QUERIES*/
 
-/*----- GENERAL -----*/
+/*----- 1. GENERAL -----*/
 
 :root {
     --main-border: 1px solid black;
-    --header-footer-color: lightsteelblue;
-    --mobile-margin: 10px;
-    --desktop-margin: 45px;
-    --stevnsfort-main-color: #377288;
+    --page-margin: 10px;
+}
+
+.kalklandet {/*baggrundsfarve på footer på Kalklandet-sider*/
+    background-color: #dcd8d6;
+    color: black;
+}
+
+header.kalklandet {
+    background-image: url("elements/header_placeholder.jpg");
+    background-size: cover;
+    height: 30vh;
+}
+
+.kalklandet a {
+    color: black;
+}
+
+.stevnsfort { /*baggrundsfarve og tekstfarve på main design på Stevnsfort-sider*/
+    background-color: #377288;
+    color: white;
+}
+
+.stevns_klint { /*baggrundsfarve og tekstfarve på main design på Stevns Klint-sider*/
+    background-color: #0082ad;
+    color: white;
+}
+
+.geomuseum { /*baggrundsfarve og tekstfarve på main design på Geomuseum Faxr-sider*/
+    background-color: #19a7a2;
+    color: white;
+}
+
+.sub_navigation.stevnsfort a,
+.sub_navigation.stevns_klint a,
+.sub_navigation.geomuseum a {
+    color: white;
 }
 
 html {
@@ -21,21 +54,29 @@ html {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 h4 {
     margin: 0 0 8px 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     margin: 0; /*for at undgå 8px automatisk margin*/
     overflow-y: scroll; /*viser scrollbar selvom siden ikke er lang nok, så ting ikke hopper*/
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 img {
     width: 100%;
-    align-self: center;
+    align-self: center; /*for at undgå at billeder strækker i flex*/
+    display: block; /*for at undgå white space under billede*/
 }
 
 ul {
@@ -46,18 +87,10 @@ ul {
 }
 
 
-/*----- HEADER -----*/
+/*----- 2. HEADER -----*/
 
 header {
-    background-color: var(--header-footer-color);
-    display: flex;
-    padding: 20px;
-}
-
-.header_img,
-nav,
-.search {
-    margin: 10px;
+    padding: var(--page-margin);
 }
 
 .header_img {
@@ -68,8 +101,10 @@ nav {
     flex: 5;
     height: fit-content;
     padding: 10px;
+    margin-left: 10px;
     background-color: white;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -77,25 +112,30 @@ nav {
     flex: 1;
     height: fit-content;
     padding: 10px;
+    margin-left: 10px;
     background-color: white;
+    color: grey;
 }
 
-.front_page_header {
-    background-image: url("elements/header_placeholder.jpg");
-    background-size: cover;
-    height: 30vh;
+.page_title {
+    font-size: 3rem;
+    margin-top: var(--page-margin);
+    text-align: center;
+    color: white;
+    line-height: 1rem;
 }
 
-.stevnsfort {
-    background-color: var(--stevnsfort-main-color);
-}
 
-
-/*----- MAIN -----*/
+/*----- 3. MAIN -----*/
 
 main {
-    margin: 0 var(--mobile-margin);
+    margin: 0 var(--page-margin);
     max-width: 1920px;
+    flex: 1;
+}
+
+.block {
+    margin-top: 10px;
 }
 
 .flex {
@@ -113,36 +153,33 @@ main {
     display: none;
 }
 
-
-/*----- SUB-NAVIGATION -----*/
-
 .sub_navigation {
     width: 200px;
-    margin-left: 10px;
     text-align: right;
     font-size: 1.5rem;
     line-height: 2.5rem;
     padding: 10px;
-    color: white;
 }
 
-/*----- FOOTER -----*/
+.sub_navigation a:hover {
+    font-size: 1.1em;
+}
+
+/*----- 4. FOOTER -----*/
 
 footer {
-    background-color: var(--header-footer-color);
-    padding: var(--mobile-margin);
+    padding: var(--page-margin);
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
 }
 
 .footer_block {
-    width: 100%;
     flex: 1;
     display: flex;
     flex-direction: column;
     margin: 10px 0;
 }
-
 
 .footer_follow {
     height: inherit;
@@ -154,14 +191,13 @@ footer {
 .footer_follow img {
     max-height: 40px;
     width: auto;
-    margin: 5px;
+    margin-left: 10px;
 }
 
 .footer_wrapper {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-
 }
 
 
@@ -187,10 +223,6 @@ footer {
     border: var(--main-border);
 }
 
-.margin_left {
-    margin-left: 0;
-}
-
 
 /*----- MEDIA QUERIES -----*/
 
@@ -207,7 +239,7 @@ footer {
 @media only screen and (min-width: 1024px) {
     footer {
         flex-direction: row;
-        padding: 20px var(--desktop-margin)
+        padding: 20px var(--page-margin);
     }
     .footer_wrapper:first-child {
         margin-right: 10px;
@@ -215,14 +247,14 @@ footer {
     .flex {
         flex-direction: row;
     }
+    .block {
+        margin-top: 0;
+    }
     .block:first-child {
         margin-left: 0;
     }
     .mobile_hide {
         display: block;
-    }
-    main {
-        margin: 0 var(--desktop-margin) 40px var(--desktop-margin);
     }
     .text_block {
         margin: 0;
@@ -232,5 +264,8 @@ footer {
     }
     .margin_top {
         margin-top: 10px;
+    }
+    :root {
+        --page-margin: 45px;
     }
 }
