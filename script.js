@@ -4,56 +4,66 @@ let restapi = [];
 let page = "";
 let primaryTopicName = "";
 let secondaryTopicName = "";
-let subNavButton = document.querySelectorAll(".sub_nav_item");
 
 let urlParams = new URLSearchParams(window.location.search);
 let primaryID = urlParams.get("primaryID");
 let secondaryID = urlParams.get("secondaryID");
 
+let mainDesign = document.querySelectorAll(".main_design");
+let mainNavButtonPage = document.querySelectorAll(".main_nav_item.page");
+let mainNavButtonIndex = document.querySelectorAll(".main_nav_item.index");
+let subNavButton = document.querySelectorAll(".sub_nav_item");
+
 
 function start() {
     fixTitles();
+
     function fixTitles() {
-    //MAIN PAGES
-    if (primaryID === "stevnsfort") {
-        primaryTopicName = "Koldkrigsmuseum Stevnsfort";
-    }
+        //MAIN PAGES
+        if (primaryID === "stevnsfort") {
+            primaryTopicName = "Koldkrigsmuseum Stevnsfort";
+        }
 
-    if (primaryID === "stevns_klint") {
-        primaryTopicName = "Stevns Klint";
-    }
+        if (primaryID === "stevns_klint") {
+            primaryTopicName = "Stevns Klint";
+        }
 
-    if (primaryID === "geomuseum") {
-        primaryTopicName = "Geomuseum Faxe";
-    }
+        if (primaryID === "geomuseum") {
+            primaryTopicName = "Geomuseum Faxe";
+        }
 
-    //SUB PAGES
-    if (secondaryID === "about") {
-        secondaryTopicName = "Om";
-    }
+        if (primaryID === "kalklandet") {
+            primaryTopicName = "Kalklandet";
+        }
 
-    if (secondaryID === "visit") {
-        secondaryTopicName = "Besøg os";
-    }
+        //SUB PAGES
+        if (secondaryID === "about") {
+            secondaryTopicName = "Om";
+        }
 
-    if (secondaryID === "teaching") {
-        secondaryTopicName = "Undervisning";
-    }
+        if (secondaryID === "visit") {
+            secondaryTopicName = "Besøg os";
+        }
 
-    if (secondaryID === "handicap") {
-        secondaryTopicName = "Info for handicappede";
-    }
+        if (secondaryID === "teaching") {
+            secondaryTopicName = "Undervisning";
+        }
 
-    if (secondaryID === "groups") {
-        secondaryTopicName = "For grupper";
-    }
+        if (secondaryID === "handicap") {
+            secondaryTopicName = "Info for handicappede";
+        }
 
-    if (secondaryID === "find") {
-        secondaryTopicName = "Find vej";
-    }
+        if (secondaryID === "groups") {
+            secondaryTopicName = "For grupper";
+        }
+
+        if (secondaryID === "find") {
+            secondaryTopicName = "Find vej";
+        }
     }
 
     console.log("start()");
+
     async function getJson() {
         let pagesUrl = "https://camillagejl.com/kea/2-semester/tema7/kalklandet/wordpress/wp-json/wp/v2/pages/";
         let jsonData = await fetch(pagesUrl);
@@ -62,7 +72,7 @@ function start() {
 
             console.log("primaryID = ", primaryID);
             console.log("secondaryID = ", secondaryID);
-            console.log("Primary topic = ", obj.primary_topic[0]);
+            console.log("Primary topic = ", obj.primary_topic[0], "and", primaryTopicName);
             if (primaryTopicName === obj.primary_topic[0] && secondaryTopicName === obj.secondary_topic[0]) {
                 console.log("JEG MATCHER!");
                 page = obj;
@@ -73,11 +83,27 @@ function start() {
 
     function designPage() {
 
-        subNavButton.forEach(button => {
-        button.classList.remove("hidden");
+        mainNavButtonPage.forEach(button => {
+            let primaryAttribute = button.getAttribute("data-primary_attribute");
+            console.log(primaryAttribute);
+            if (primaryID === primaryAttribute) {
+                button.classList.add("button_chosen");
+            }
         });
 
-        let mainDesign = document.querySelectorAll(".main_design");
+        if (primaryID === "stevnsfort" || "stevns_klint" || "geomuseum") {
+            document.querySelector(".attraction_menu button").classList.add("button_chosen");
+        }
+
+        subNavButton.forEach(button => {
+            button.classList.remove("hidden");
+            let secondaryAttribute = button.getAttribute("data-secondary_attribute");
+            console.log(secondaryAttribute);
+            if (secondaryID === secondaryAttribute) {
+                button.classList.add("button_chosen");
+            }
+        });
+
         console.log(page);
         mainDesign.forEach(designPart => {
             designPart.classList.remove(".kalklandet");
@@ -107,12 +133,20 @@ function start() {
 
     }
 
-    let mainNavButton = document.querySelectorAll(".main_nav_item");
-    mainNavButton.forEach(button => {
+    mainNavButtonPage.forEach(button => {
         button.addEventListener("click", function () {
             let primaryAttribute = this.getAttribute("data-primary_attribute");
             let secondaryAttribute = this.getAttribute("data-secondary_attribute");
             location.href = "page.html?primaryID=" + primaryAttribute + "&secondaryID=" + secondaryAttribute;
+            console.log(primaryAttribute);
+        });
+    });
+
+    mainNavButtonIndex.forEach(button => {
+        button.addEventListener("click", function () {
+            let primaryAttribute = this.getAttribute("data-primary_attribute");
+            let secondaryAttribute = this.getAttribute("data-secondary_attribute");
+            location.href = "index.html?primaryID=" + primaryAttribute + "&secondaryID=" + secondaryAttribute;
             console.log(primaryAttribute);
         });
     });
@@ -125,6 +159,12 @@ function start() {
         });
     });
 
+    document.querySelector(".attraction_menu").addEventListener("mouseover", function () {
+        document.querySelector(".attraction_dropdown").classList.remove("hidden");
+        document.querySelector(".attraction_menu").addEventListener("mouseout", function () {
+            document.querySelector(".attraction_dropdown").classList.add("hidden");
+        })
+    });
 
 
     getJson();

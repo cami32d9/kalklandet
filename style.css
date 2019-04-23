@@ -69,7 +69,6 @@ h4 {
 header.kalklandet { /*header med baggrundsbillede på alle Kalklandet-sider*/
     background-image: url("elements/header_placeholder.jpg");
     background-size: cover;
-    height: 30vh;
 }
 
 .stevnsfort { /*baggrundsfarve og tekstfarve på main design på Stevnsfort-sider*/
@@ -87,12 +86,21 @@ header.kalklandet { /*header med baggrundsbillede på alle Kalklandet-sider*/
     color: white;
 }
 
+nav a {
+    color: black;
+}
+
 button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+
+}
+
+nav button,
+.sub_navigation button { /*al styling fra standard buttons fjernes*/
     font-size: 1rem;
-    width: inherit; /*for at knappen fylder hvad den kan, i stedet for kun at være så bred som teksten*/
+    line-height: 2.5rem;
     flex: 1;
     border-radius: var(--main-border-radius);
     text-transform: uppercase; /*gør al tekst i buttons uppercase, selvom det ikke er i HTML*/
@@ -107,6 +115,12 @@ button {
 
 button:hover {
     background-color: var(--kalklandet-main-color-transparent);
+    border-radius: var(--main-border-radius);
+}
+
+
+.button_chosen {
+    background-color: rgba(0, 60, 255, 0.25);
 }
 
 a {
@@ -150,8 +164,7 @@ header {
 nav {
     flex: 5;
     height: fit-content;
-    padding: 10px;
-    margin-left: 10px;
+    margin-left: 30px;
     background-color: white;
     display: flex;
     flex-wrap: wrap;
@@ -159,11 +172,29 @@ nav {
     border-radius: var(--main-border-radius);;
 }
 
+.attraction_menu {
+    flex: 1;
+    position: relative;
+    height: inherit;
+}
+
+.attraction_menu button{
+    width: 100%;
+}
+
+.attraction_dropdown {
+    color: black;
+    background-color: lightsteelblue;
+    position: absolute;
+    top: 2.6rem;
+    width: 400px;
+}
+
 .search {
     flex: 1;
     height: fit-content;
     padding: 10px;
-    margin-left: 10px;
+    margin-left: 30px;
     background-color: white;
     color: grey;
     border-radius: var(--main-border-radius);
@@ -217,16 +248,35 @@ footer {
 /*----- 4. MAIN -----*/
 
 main {
-    margin: var(--page-margin) var(--page-margin) 0 0;
-    max-width: 1920px; /*for at undgå, at alt bliver kæmpestort på en større skærm*/
+    margin: 50px auto;
+    max-width: 1300px; /*for at undgå, at alt bliver kæmpestort på en større skærm*/
     flex: 1;
+}
+
+@keyframes fade-in {
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 .sub_navigation {
     width: 250px;
     padding: 10px;
-    height: 100%; /*højden tilpasser sig antallet af menupunkter*/
+    position: absolute;
+    left: 0;
+    height: inherit; /*højden tilpasser sig antallet af menupunkter*/
     border-radius: var(--main-border-radius);
+    opacity: 0.7;
+}
+
+
+.sub_navigation:hover {
+    opacity: 1;
+    transition: 0.5s
+}
+
+@keyframes fade-in {
+    from {opacity: 0.5}
+    to {opacity: 1}
 }
 
 .block {

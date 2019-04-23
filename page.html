@@ -17,23 +17,25 @@
                 <img src="elements/logo_placeholder.png" alt="logo">
             </div>
             <nav>
-                <a href="index.html">
-                    <button>
-                        Forside
-                    </button>
-                </a>
-                <button>
-                    Attraktioner
+                <button data-primary_attribute="kalklandet" data-secondary_attribute="about" class="main_nav_item index">
+                    Forside
                 </button>
-                <!--<button data-primary_attribute="stevnsfort" data-secondary_attribute="about" class="main_nav_item">-->
-                    <!--Koldkrigsmuseum Stevnsfort-->
-                <!--</button>-->
-                <!--<button data-primary_attribute="stevns_klint" data-secondary_attribute="about" class="main_nav_item">-->
-                    <!--Stevns Klint-->
-                <!--</button>-->
-                <!--<button data-primary_attribute="geomuseum" data-secondary_attribute="about" class="main_nav_item">-->
-                    <!--Geomuseum Faxe-->
-                <!--</button>-->
+                <div class="attraction_menu">
+                    <button>
+                        Attraktioner
+                    </button>
+                    <div class="attraction_dropdown hidden">
+                        <button data-primary_attribute="stevnsfort" data-secondary_attribute="about" class="main_nav_item page">
+                        Koldkrigsmuseum Stevnsfort
+                        </button>
+                        <button data-primary_attribute="stevns_klint" data-secondary_attribute="about" class="main_nav_item page">
+                        Stevns Klint
+                        </button>
+                        <button data-primary_attribute="geomuseum" data-secondary_attribute="about" class="main_nav_item page">
+                        Geomuseum Faxe
+                        </button>
+                    </div>
+                </div>
                 <button>
                     Viden
                 </button>
@@ -52,43 +54,43 @@
     </header>
 
     <main id="page" class="flex">
-            <div id="sub_navigation" class="main_design sub_navigation">
-                <ul>
-                    <li>
-                        <button data-secondary_attribute="about" class="sub_nav_item hidden">
-                            Om
-                        </button>
-                    </li>
-                    <li>
-                        <button data-secondary_attribute="teaching" class="sub_nav_item hidden"> Undervisning
-                        </button>
-                    </li>
-                    <li>
-                        <button data-secondary_attribute="visit" class="sub_nav_item hidden"> Besøg os
-                        </button>
-                    </li>
-                    <li>
-                        <button data-secondary_attribute="handicap" class="sub_nav_item hidden"> Info for handicappede
-                        </button>
-                    </li>
-                    <li>
-                        <button data-secondary_attribute="groups" class="sub_nav_item hidden"> For grupper
-                        </button>
-                    </li>
-                    <li>
-                        <button data-secondary_attribute="find" class="sub_nav_item hidden"> Find vej
-                        </button>
-                    </li>
-                </ul>
+        <div id="sub_navigation" class="main_design sub_navigation">
+            <ul>
+                <li>
+                    <button data-secondary_attribute="about" class="sub_nav_item hidden">
+                        Om
+                    </button>
+                </li>
+                <li>
+                    <button data-secondary_attribute="teaching" class="sub_nav_item hidden"> Undervisning
+                    </button>
+                </li>
+                <li>
+                    <button data-secondary_attribute="visit" class="sub_nav_item hidden"> Besøg os
+                    </button>
+                </li>
+                <li>
+                    <button data-secondary_attribute="handicap" class="sub_nav_item hidden"> Info for handicappede
+                    </button>
+                </li>
+                <li>
+                    <button data-secondary_attribute="groups" class="sub_nav_item hidden"> For grupper
+                    </button>
+                </li>
+                <li>
+                    <button data-secondary_attribute="find" class="sub_nav_item hidden"> Find vej
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div id="main_content" class="flex_four flex">
+            <div id="text_content" class="text_block flex_one">
+                <h1></h1>
             </div>
-            <div id="main_content" class="margin flex_four flex">
-                <div id="text_content" class="text_block flex_one margin_left">
-                    <h1></h1>
-                </div>
-                <div id="image_content" class="margin_left flex_one">
-                    <img src="">
-                </div>
+            <div id="image_content" class="margin_left flex_one">
+                <img src="">
             </div>
+        </div>
     </main>
 
     <footer class="main_design">
@@ -152,11 +154,9 @@
                         <br><br>
                     </li>
                     <li>
-                        <i>
-                            <u>
+                        <a href="#">
                             Klik her for særlige åbningstider i ferier mm.
-                            </u>
-                        </i>
+                        </a>
                     </li>
                 </ul>
             </div>

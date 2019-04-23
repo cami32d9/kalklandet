@@ -8,26 +8,47 @@
 </head>
 
 <body>
-    <header class="kalklandet_header">
+    <header class="kalklandet">
         <div class="flex">
             <div class="header_img">
                 <img src="elements/logo_placeholder.png" alt="logo">
             </div>
             <nav>
-                <a href="index.html">
+                <button
+                    data-primary_attribute="kalklandet"
+                    data-secondary_attribute="about"
+                    class="main_nav_item index"
+                >
+                    Forside
+                </button>
+                <div class="attraction_menu">
                     <button>
-                        Forside
+                        Attraktioner
                     </button>
-                </a>
-                <button data-primary_attribute="stevnsfort" data-secondary_attribute="about" class="main_nav_item">
-                    Koldkrigsmuseum Stevnsfort
-                </button>
-                <button data-primary_attribute="stevns_klint" data-secondary_attribute="about" class="main_nav_item">
-                    Stevns Klint
-                </button>
-                <button data-primary_attribute="geomuseum" data-secondary_attribute="about" class="main_nav_item">
-                    Geomuseum Faxe
-                </button>
+                    <div class="attraction_dropdown hidden">
+                        <button
+                            data-primary_attribute="stevnsfort"
+                            data-secondary_attribute="about"
+                            class="main_nav_item page"
+                        >
+                            Koldkrigsmuseum Stevnsfort
+                        </button>
+                        <button
+                            data-primary_attribute="stevns_klint"
+                            data-secondary_attribute="about"
+                            class="main_nav_item page"
+                        >
+                            Stevns Klint
+                        </button>
+                        <button
+                            data-primary_attribute="geomuseum"
+                            data-secondary_attribute="about"
+                            class="main_nav_item page"
+                        >
+                            Geomuseum Faxe
+                        </button>
+                    </div>
+                </div>
                 <button>
                     Viden
                 </button>
@@ -42,34 +63,42 @@
                 Søg
             </div>
         </div>
-        <div class="page_title">Kalklandet - en del af Østsjællands Museum</div>
+        <div class="page_title"></div>
     </header>
 
     <main>
+        <div id="main_content" class="flex">
+            <div id="text_content" class="text_block flex_one">
+                <h1></h1>
+            </div>
+            <div id="image_content" class="margin_left flex_one">
+                <img src="">
+            </div>
+        </div>
         <h1>Attraktioner</h1>
         <div class="flex">
-            <div class="block">
-                <img src="elements/wide_placeholder.jpg" alt="">
-                <h2 class="text_block border mobile_hide">
+            <button data-primary_attribute="stevnsfort" data-secondary_attribute="about" class="main_nav_item">
+                <img src="elements/stevnsfort_logo.jpg" alt="">
+                <h2 class="text_block mobile_hide">
                     Koldkrigsmuseum Stevnsfort
                 </h2>
-            </div>
-            <div class="block margin_left">
-                <img src="elements/wide_placeholder.jpg" alt="">
-                <h2 class="text_block border mobile_hide">
+            </button>
+            <button data-primary_attribute="stevns_klint" data-secondary_attribute="about" class="main_nav_item">
+                <img src="elements/stevns_klint_logo.jpg" alt="">
+                <h2 class="text_block mobile_hide">
                     Stevns Klint UNESCO verdensarv
                 </h2>
-            </div>
-            <div class="block margin_left">
-                <img src="elements/wide_placeholder.jpg" alt="">
-                <h2 class="text_block border mobile_hide">
+            </button>
+            <button data-primary_attribute="geomuseum" data-secondary_attribute="about" class="main_nav_item">
+                <img src="elements/geomuseom_logo.jpg" alt="">
+                <h2 class="text_block mobile_hide">
                     Geomuseum Faxe
                 </h2>
-            </div>
+            </button>
         </div>
     </main>
 
-    <footer class="kalklandet">
+    <footer class="main_design">
         <div class="footer_wrapper flex_one">
             <div class="footer_block">
                 <h4>Kontakt</h4>
@@ -90,17 +119,17 @@
                 <ul>
                     <li>
                         <b>
-                        Åbningstider i Kalklandet 2019:
-                    </b>
+                            Åbningstider i Kalklandet 2019:
+                        </b>
                     </li>
                     <li>
-                    1. april – 30. juni              alle dage kl. 11.00 - 15.00
+                        1. april – 30. juni alle dage kl. 11.00 - 15.00
                     </li>
                     <li>
-                    1. juli – 30. september     alle dage kl. 10.00 - 17.00
+                        1. juli – 30. september alle dage kl. 10.00 - 17.00
                     </li>
                     <li>
-                    1. oktober – 31. oktober   alle dage kl. 11.00 - 15.00
+                        1. oktober – 31. oktober alle dage kl. 11.00 - 15.00
                     </li>
                     <li>
                         <i>
