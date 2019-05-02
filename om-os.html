@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
     <link rel="apple-touch-icon" sizes="180x180" href="myFavIcons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="myFavIcons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="myFavIcons/favicon-16x16.png">
@@ -16,7 +17,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700" rel="stylesheet">
 
-    <title>Østsjællands Museum</title>
+    <title>Kalklandet</title>
 </head>
 
 <body>
@@ -94,39 +95,84 @@
         <div class="mobile_page_title"></div>
     </header>
 
-    <main class="main_index content">
-        <div id="main_content" class="flex">
-            <div id="text_content" class="text_block flex_one">
-                <h1></h1>
-            </div>
-            <div id="image_content" class="margin_left flex_one">
-                <img src="">
-            </div>
+    <main id="page" class="main_page flex">
+        <div id="sub_navigation" class="kalklandet sub_navigation burger_menu">
+            <ul>
+                <li>
+                    <button>
+                        Om os
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        Vores opgaver
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        Vores resultater
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        Bestyrelsens arbejde
+                    </button>
+                </li>
+            </ul>
         </div>
-        <h1>Attraktioner</h1>
-        <div class="flex index_attractions">
-            <button data-primary_attribute="stevnsfort" data-secondary_attribute="about" class="main_nav_item page">
-                <img src="elements/stevnsfort_logo.jpg" alt="">
-                <h2 class="text_block mobile_hide">
-                    Koldkrigsmuseum Stevnsfort
-                </h2>
-            </button>
-            <button data-primary_attribute="stevns_klint" data-secondary_attribute="about" class="main_nav_item page">
-                <img src="elements/stevns_klint_logo.jpg" alt="">
-                <h2 class="text_block mobile_hide">
-                    Stevns Klint UNESCO verdensarv
-                </h2>
-            </button>
-            <button data-primary_attribute="geomuseum" data-secondary_attribute="about" class="main_nav_item page">
-                <img src="elements/geomuseom_logo.jpg" alt="">
-                <h2 class="text_block mobile_hide">
-                    Geomuseum Faxe
-                </h2>
-            </button>
+        <div id="main_content" class="flex_four flex">
+            <div id="text_content" class="text_block flex_one">
+                <p>
+                Østsjællands Museum er et statsanerkendt museum, der arbejder med nyere tids kulturhistorie og geologi. Kalklandet er vores overordnede tema, som rummer den natur- og kulturhistorie, der findes i området, hvor kalken ligger tæt under overfladen. Inden for dette tema har koldkrigsfæstningen Stevnsfort, der ligger nedgravet i kalken, en fremtrædende plads.
+                Museet indsamler, registrerer, bevarer, forsker og formidler inden for den emnemæssige og geografiske afgrænsning jf. Museumslovens § 15.
+                </p>
+                <h3>
+                Ejerskab
+                </h3>
+                <p>
+                Østsjællands Museum er en selvejende institution. Museet modtager faste driftstilskud fra Stevns og Faxe kommuner samt fra staten.
+                </p>
+                <h3>
+                Udstillinger
+                </h3>
+                <p>
+                Østsjællands Museum driver udstillingerne:
+                <br>
+                Geomuseum Faxe
+                <br>
+                Koldkrigsmuseum Stevnsfort
+                </p>
+                <b>
+                Ansvarsområde
+                </b>
+                <p>
+                Østsjællands Museum har ansvar for nyere tids kulturhistorie for Stevns og Faxe kommuner samt det geologiske ansvar for Stevns, Faxe, Vordingborg, Køge, Greve og Solrød kommuner.
+                Indsamling, forskning og formidling sker inden for museets geografiske, tids- og emnemæssige afgrænsning. Museets indsamling koncentreres om Kalklandets geologi og kulturhistorie herunder koldkrigsfæstningen Stevnsfort.
+                </p>
+                <b>
+                HVEM ER VI?
+                </b>
+                <p>
+                Østsjællands Museum er en selvejende institution og et statsanerkendt museum. Læs mere om:
+                    <br>
+                    Museets historie
+                    <br>
+                Bestyrelse
+                    <br>
+                Medarbejdere
+                    <br>
+                Frivillige
+                    <br>
+                Østsjællands Museumsforening
+                </p>
+            </div>
+            <div id="image_content" class="margin_left flex_one image_content">
+                <img src="elements/image_placeholder.jpg">
+            </div>
         </div>
     </main>
 
-    <footer class="main_design">
+    <footer class="kalklandet">
         <div class="footer_wrapper flex_one">
             <div class="footer_block">
                 <h4>Kontakt</h4>
@@ -207,7 +253,6 @@
         </div>
 
     </footer>
-
 
     <script src="script.js"></script>
 

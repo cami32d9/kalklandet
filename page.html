@@ -5,45 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="myFavIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="myFavIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="myFavIcons/favicon-16x16.png">
+    <link rel="manifest" href="myFavIcons/site.webmanifest">
+    <link rel="mask-icon" href="myFavIcons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="myFavIcons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="myFavIcons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700" rel="stylesheet">
 
-    <title>Koldkrigsmuseum Stevnsfort</title>
+    <title>Kalklandet</title>
 </head>
 
 <body>
     <header class="main_design">
-        <div class="flex">
-            <div class="header_img">
-                <img src="elements/logo_placeholder.png" alt="logo">
+        <div class="header_content">
+        <div class="header_img">
+            <a href="index.html">
+            <img src="elements/logo_placeholder.png" alt="logo">
+        </a>
+        </div>
+        <div class="nav_container">
+            <div class="burger_icon">
+                <img src="elements/burger_icon.png">
             </div>
+        <div class="nav_bar burger_menu">
             <nav>
-                <button data-primary_attribute="kalklandet" data-secondary_attribute="about" class="main_nav_item index">
+                <button
+                    data-primary_attribute="kalklandet"
+                    data-secondary_attribute="about"
+                    class="main_nav_item index"
+                >
                     Forside
                 </button>
                 <div class="attraction_menu">
-                    <button>
+                    <button class="mobile_hide">
                         Attraktioner
                     </button>
-                    <div class="attraction_dropdown hidden">
-                        <button data-primary_attribute="stevnsfort" data-secondary_attribute="about" class="main_nav_item page">
-                        Koldkrigsmuseum Stevnsfort
+                    <div class="attraction_dropdown">
+                        <button
+                            data-primary_attribute="stevnsfort"
+                            data-secondary_attribute="about"
+                            class="main_nav_item page"
+                        >
+                            Koldkrigsmuseum Stevnsfort
                         </button>
-                        <button data-primary_attribute="stevns_klint" data-secondary_attribute="about" class="main_nav_item page">
-                        Stevns Klint
+                        <button
+                            data-primary_attribute="stevns_klint"
+                            data-secondary_attribute="about"
+                            class="main_nav_item page"
+                        >
+                            Stevns Klint
                         </button>
-                        <button data-primary_attribute="geomuseum" data-secondary_attribute="about" class="main_nav_item page">
-                        Geomuseum Faxe
+                        <button
+                            data-primary_attribute="geomuseum"
+                            data-secondary_attribute="about"
+                            class="main_nav_item page"
+                        >
+                            Geomuseum Faxe
                         </button>
                     </div>
                 </div>
                 <button>
+                    <a href="viden.html?fakeID=viden">
                     Viden
+                </a>
                 </button>
                 <button>
+                    <a href="nyheder.html?fakeID=nyheder">
                     Nyheder
+                    </a>
                 </button>
                 <button>
+                    <a href="om-os.html?fakeID=om-os">
                     Om os
+                    </a>
                 </button>
             </nav>
             <div class="search">
@@ -51,34 +90,42 @@
             </div>
         </div>
         <div class="page_title"></div>
+        </div>
+        </div>
+        <div class="mobile_page_title"></div>
     </header>
 
-    <main id="page" class="flex">
-        <div id="sub_navigation" class="main_design sub_navigation">
+    <main id="page" class="main_page flex content">
+        <div id="sub_navigation" class="main_design sub_navigation burger_menu">
             <ul>
                 <li>
-                    <button data-secondary_attribute="about" class="sub_nav_item hidden">
+                    <button data-secondary_attribute="about" class="sub_nav_item">
                         Om
                     </button>
                 </li>
                 <li>
-                    <button data-secondary_attribute="teaching" class="sub_nav_item hidden"> Undervisning
+                    <button data-secondary_attribute="teaching" class="sub_nav_item">
+                        Undervisning
                     </button>
                 </li>
                 <li>
-                    <button data-secondary_attribute="visit" class="sub_nav_item hidden"> Besøg os
+                    <button data-secondary_attribute="visit" class="sub_nav_item">
+                        Besøg os
                     </button>
                 </li>
                 <li>
-                    <button data-secondary_attribute="handicap" class="sub_nav_item hidden"> Info for handicappede
+                    <button data-secondary_attribute="tours" class="sub_nav_item">
+                        Guidet tur
                     </button>
                 </li>
                 <li>
-                    <button data-secondary_attribute="groups" class="sub_nav_item hidden"> For grupper
+                    <button data-secondary_attribute="handicap" class="sub_nav_item">
+                        Info for handicappede
                     </button>
                 </li>
                 <li>
-                    <button data-secondary_attribute="find" class="sub_nav_item hidden"> Find vej
+                    <button data-secondary_attribute="find" class="sub_nav_item">
+                        Find vej
                     </button>
                 </li>
             </ul>
@@ -87,8 +134,8 @@
             <div id="text_content" class="text_block flex_one">
                 <h1></h1>
             </div>
-            <div id="image_content" class="margin_left flex_one">
-                <img src="">
+            <div id="image_content" class="margin_left flex_one image_content">
+                <!--<img src="">-->
             </div>
         </div>
     </main>
@@ -167,10 +214,8 @@
                 <img src="elements/maps_placeholder.jpg" alt="Google Maps">
             </div>
             <div class="footer_block footer_follow">
-                <img src="elements/follow_placeholder.png" alt="follow">
-                <img src="elements/follow_placeholder.png" alt="follow">
-                <img src="elements/follow_placeholder.png" alt="follow">
-                <img src="elements/follow_placeholder.png" alt="follow">
+                <img src="elements/facebook_icon.png" alt="follow">
+                <img src="elements/instagram_icon.png" alt="follow">
                 <img src="elements/language_placeholder.png" alt="language">
             </div>
         </div>

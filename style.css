@@ -44,17 +44,26 @@ html {
 
 p {
     line-height: 2rem;
+    margin-top: 0;
 }
 
 .page_title,
+.mobile_page_title,
 h1,
-h2 {
+h2,
+h3 {
     font-family: var(--main-heading-font);
 }
 
 h1 {
     font-size: 2.5rem;
     margin-top: 0;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    line-height: 2rem;
 }
 
 h4 {
@@ -66,9 +75,18 @@ h4 {
     color: black;
 }
 
+.kalklandet a {
+    color: #fe6400;
+}
+
 header.kalklandet { /*header med baggrundsbillede på alle Kalklandet-sider*/
-    background-image: url("elements/header_placeholder.jpg");
+    background-image: url("elements/kalklandet_header.jpg");
     background-size: cover;
+    background-position: center;
+}
+
+header.kalklandet a {
+    color: black;
 }
 
 .stevnsfort { /*baggrundsfarve og tekstfarve på main design på Stevnsfort-sider*/
@@ -81,26 +99,26 @@ header.kalklandet { /*header med baggrundsbillede på alle Kalklandet-sider*/
     color: white;
 }
 
+footer .geomuseum a {
+    color: #ffda74;
+}
+
 .geomuseum { /*baggrundsfarve og tekstfarve på main design på Geomuseum Faxr-sider*/
     background-color: #19a7a2;
     color: white;
-}
-
-nav a {
-    color: black;
 }
 
 button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-
+    font-family: var(--main-heading-font);
 }
 
 nav button,
 .sub_navigation button { /*al styling fra standard buttons fjernes*/
-    font-size: 1rem;
-    line-height: 2.5rem;
+    font-size: 1.2rem;
+    padding: 5px 0;
     flex: 1;
     border-radius: var(--main-border-radius);
     text-transform: uppercase; /*gør al tekst i buttons uppercase, selvom det ikke er i HTML*/
@@ -108,8 +126,7 @@ nav button,
 
 .sub_navigation button {
     width: 100%; /*for at knappen fylder hvad den kan, i stedet for kun at være så bred som teksten*/
-    text-align: right;
-    line-height: 2rem;
+    text-align: center;
     color: white;
 }
 
@@ -118,14 +135,17 @@ button:hover {
     border-radius: var(--main-border-radius);
 }
 
-
 .button_chosen {
-    background-color: rgba(0, 60, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav .button_chosen {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 a {
-    text-decoration: none;
-    color: #fe6400;
+    text-decoration: underline;
+    color: var(--kalklandet-main-color)
 }
 
 body {
@@ -146,7 +166,7 @@ img {
 ul { /*kan evt. ændres til at være mere specifik; denne er stylet til footer og subnav,
 men måske vi skal bruge lister andre steder?*/
     list-style: none;
-    padding: 10px;
+    padding: 0;
     margin: 0;
 }
 
@@ -154,22 +174,69 @@ men måske vi skal bruge lister andre steder?*/
 /*----- 2. HEADER -----*/
 
 header {
-    padding: var(--page-margin);
+    padding: var(--page-margin) var(--page-margin) 30px var(--page-margin);
+}
+
+.header_content {
+    display: flex;
+    justify-content: space-between;
 }
 
 .header_img {
-    flex: 1.5;
+    max-width: 70%;
+}
+
+.burger_icon {
+    /*width: 100%;*/
+    display: flex;
+    /*flex: 1;*/
+    justify-content: flex-end;
+}
+
+.burger_icon img {
+    width: 50px;
+    padding: 0 3px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 7px;
+    z-index: 1000;
+}
+
+.burger_menu {
+    display: none;
 }
 
 nav {
-    flex: 5;
     height: fit-content;
-    margin-left: 30px;
-    background-color: white;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    border-radius: var(--main-border-radius);;
+    border-radius: var(--main-border-radius);
+    flex-direction: column;
+}
+
+.nav_bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 20vh;
+    height: 80vh;
+    width: 50vw;
+    background-color: #dcd8d6;
+    align-items: center;
+}
+
+.search {
+    flex: 1;
+    height: fit-content;
+    padding: 10px;
+    margin: 30px;
+    background-color: white;
+    color: grey;
+    border-radius: var(--main-border-radius);
+}
+
+.nav_container {
+    flex: 2.5;
+    margin-left: 30px;
 }
 
 .attraction_menu {
@@ -184,28 +251,26 @@ nav {
 
 .attraction_dropdown {
     color: black;
-    background-color: lightsteelblue;
-    position: absolute;
-    top: 2.6rem;
-    width: 400px;
-}
-
-.search {
-    flex: 1;
-    height: fit-content;
-    padding: 10px;
-    margin-left: 30px;
-    background-color: white;
-    color: grey;
-    border-radius: var(--main-border-radius);
+    border-radius: var(--main-border-radius)
 }
 
 .page_title {
-    font-size: 3rem;
-    margin-top: var(--page-margin);
+    font-size: 2.4rem;
+    margin-top: 50px;
+    color: white;
+    display: none;
+}
+
+.mobile_page_title {
+    font-size: 2.4rem;
+    margin-top: 50px;
     text-align: center;
     color: white;
-    line-height: 1rem;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
@@ -244,39 +309,32 @@ footer {
     flex-direction: column;
 }
 
+footer a {
+    color: #ffa03a;
+}
+
 
 /*----- 4. MAIN -----*/
 
 main {
-    margin: 50px auto;
-    max-width: 1300px; /*for at undgå, at alt bliver kæmpestort på en større skærm*/
+    max-width: 1300px;
     flex: 1;
-}
-
-@keyframes fade-in {
-    from {opacity: 0}
-    to {opacity: 1}
+    padding: 10px var(--page-margin);
+    margin: var(--page-margin) auto;
 }
 
 .sub_navigation {
-    width: 250px;
-    padding: 10px;
     position: absolute;
+    top: 0;
     left: 0;
-    height: inherit; /*højden tilpasser sig antallet af menupunkter*/
-    border-radius: var(--main-border-radius);
-    opacity: 0.7;
+    padding-top: 20vh;
+    height: 80vh;
+    width: 50vw;
+    align-items: center;
 }
-
 
 .sub_navigation:hover {
     opacity: 1;
-    transition: 0.5s
-}
-
-@keyframes fade-in {
-    from {opacity: 0.5}
-    to {opacity: 1}
 }
 
 .block {
@@ -284,13 +342,35 @@ main {
 }
 
 .text_block {
-    padding: 10px;
+    padding: 10px 0;
     margin: 10px 0;
 }
 
 .mobile_hide {
     display: none;
 }
+
+.index_attractions button {
+    padding: 10px;
+}
+
+.index_attractions button:hover {
+    background-color: transparent;
+}
+
+.image_content img {
+    margin-bottom: 5px;
+}
+
+table {
+    margin-bottom: 20px;
+}
+
+td {
+    padding-right: 20px;
+    line-height: 1rem;
+}
+
 
 /*----- HELPERS -----*/
 
@@ -334,19 +414,49 @@ main {
     .footer_block:first-child {
         margin-right: 10px;
     }
+    .header_img {
+        max-width: 50%;
+    }
 }
 
+@media only screen and (min-width: 800px) {
+    :root {
+        --page-margin: 45px;
+    }
+}
 
 @media only screen and (min-width: 1024px) {
-    footer {
-        flex-direction: row;
-        padding: 20px var(--page-margin);
+    .kalklandet nav {
+        background-color: rgba(255, 255, 255, 0.85);
     }
+    .nav_container {
+        flex: 4;
+    }
+
+    button {
+        line-height: 2.5rem;
+    }
+
+    .page_title {
+        display: block;
+    }
+
+    .mobile_page_title {
+        display: none;
+    }
+
+    nav button,
+    .sub_navigation button {
+        margin: 0;
+    }
+
+    nav {
+        flex: 5;
+        flex-direction: row;
+    }
+
     .footer_wrapper:first-child {
         margin-right: 10px;
-    }
-    .flex {
-        flex-direction: row;
     }
     .block {
         margin-top: 0;
@@ -360,16 +470,109 @@ main {
     .text_block {
         margin: 0;
     }
-    .margin_left {
-        margin-left: 30px;
-    }
     .margin_top {
         margin-top: 10px;
-    }
-    .margin {
-        margin: auto 100px;
     }
     :root {
         --page-margin: 45px;
     }
+    .index_attractions {
+        flex-direction: row;
+    }
+    .burger_menu {
+        display: block;
+    }
+    .nav_bar {
+        flex: 5;
+        display: flex;
+        position: relative;
+        background-color: transparent;
+        padding: 0;
+        height: auto;
+        width: auto;
+    }
+    .sub_navigation {
+        width: 250px;
+        padding: 30px 50px 30px 30px;
+        position: absolute;
+        top: auto;
+        left: 0;
+        height: inherit; /*højden tilpasser sig antallet af menupunkter*/
+        border-radius: 0 100px 100px 0;
+    }
+    .attraction_dropdown {
+        position: absolute;
+        top: 2.6rem;
+        display: none;
+        background-color: rgba(255, 251, 249, 0.95);
+        width: 350px;
+        padding: 10px;
+    }
+
+    .attraction_dropdown .button_chosen {
+        background-color: rgba(0, 0, 0, 0.07);
+    }
+    nav .button_chosen {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    nav .index.button_chosen {
+        background-color: rgba(254, 100, 0, 0.2);
+    }
+    nav {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+    .sub_navigation button {
+        text-align: right;
+        line-height: 2rem;
+        padding: 0 6px;
+    }
+    .burger_icon {
+        display: none;
+    }
+    .header_img {
+        flex: 1;
+    }
+    .main_page {
+        margin: 50px 0 50px 330px;
+    }
+    .search {
+        margin: 0 0 0 30px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .flex {
+        flex-direction: row;
+    }
+
+    .page_title {
+        font-size: 3rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .margin_left {
+        margin-left: 30px;
+    }
+    footer {
+        flex-direction: row;
+        padding: 20px var(--page-margin);
+    }
+    .sub_navigation {
+        opacity: 0.7;
+        transition: 0.3s;
+    }
+}
+
+
+
+
+.display {
+    display: block;
+}
+
+.kalklandet button {
+    color: black;
 }
